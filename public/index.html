@@ -1,0 +1,63 @@
+<html>
+<head>
+
+  <link href="styles.css" rel="stylesheet" text="text/css" />
+  
+
+</head>
+<body>
+<center>
+    <h1 class="title">Lorem Ipsum Generator</h1>
+
+    <p class="description">A Harry Potter lorem ipsum generator.</p>
+
+    <form action="/" method="POST">
+      <input type="number" class="paragraph-number" name="numberOfParagraphs">
+      <input type="submit" value="Expecto Patronum!" class="generate-button">
+      <button onclick="deletePassage()" class="generate-button">Clear</button>
+    </form>  </center>
+  
+  
+<script>
+function copyPassage() {
+  var copyText = document.getElementById("generated-text");
+  window.getSelection().selectAllChildren(copyText);
+  document.execCommand("copy");
+} 
+
+function deletePassage() {
+  var deleteText = document.getElementById("generated-text");
+  window.getSelection().selectAllChildren(deleteText);
+  document.execCommand("delete");
+} 
+</script>
+  
+
+  
+  <center> 
+   <div class="border"><div id="generated-text">
+      <div class='placeholder-div'></div>
+    </div>
+    </div>
+    
+<div class="tooltip">    
+  <button onclick="copyPassage()" onmouseout="outFunc()" class="copy-button"><span class="tooltiptext" id="myToolTip"></span>
+  Copy Text</button>
+</div>
+
+<script> 
+var tooltip = document.getElementById("myTooltip");
+tooltip.innerHTML = "Copied: " + copyText.value;
+}
+
+function outFunc() {
+  var tooltip = document.getElementById("myTooltip");
+  tooltip.innerHTML = "Copy to clipboard";
+}
+</script>   
+ 
+</center>
+  
+  <script type="/generator.js" src="script.js"></script>
+</body>
+</html>
